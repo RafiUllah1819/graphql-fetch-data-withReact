@@ -1,9 +1,11 @@
 import React from 'react'
-import { useCharacter } from '../hooks/useCharacter'
+import { useCharacter } from '../hooks/useCharacter';
+import {useParams} from 'react-router-dom';
 
 export const Character = () => {
+    const {id} = useParams()
 
-   const {error, loading, data} = useCharacter(4)
+   const {error, loading, data} = useCharacter(id)
    console.log({
        error,
        loading,
